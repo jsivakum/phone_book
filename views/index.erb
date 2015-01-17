@@ -1,0 +1,21 @@
+<h2>List of Contacts</h2>
+<ul>
+<% @list.each() do |name| %>
+<li><a href ="details/<%= name %>"><%= name %> </a> </li>
+<% end %>
+</ul>
+
+<h2>Add Contact</h2>
+<form id="contact" action="add_to_list_of_contacts" method="post">
+  <input id="name" type="text" name="name" class="form-control" placeholder="Name of Contact">
+  <input id="type" type="text" name="type" class="form-control" placeholder="Type of Number">
+  <input id="number" type="text" name="number" class="form-control" placeholder="1st Contact Number">
+  <input id="type2" type="text" name="type2" class="form-control" placeholder="Type of Number">
+  <input id="number2" type="text" name="number2" class="form-control" placeholder=" 2nd Contact Number">
+  <input id="type2" type="text" name="type3" class="form-control" placeholder="Type of Number">
+  <input id="number2" type="text" name="number3" class="form-control" placeholder=" 3rd Contact Number">
+  <input id="type2" type="text" name="type4" class="form-control" placeholder="Type of Number">
+  <input id="number2" type="text" name="number4" class="form-control" placeholder=" 4th Contact Number" >
+</div>
+  <button type="submit" name="button" class="btn btn-sm btn-primary">Add Contact</button>
+</form>

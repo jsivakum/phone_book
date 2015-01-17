@@ -15,6 +15,16 @@ class Contacts
     list_of_contact_names
   end
 
+  define_singleton_method(:search_for_contact) do |name|
+    contact_to_return = nil
+    @@list_of_contacts.each() do |contact|
+      if(contact.name() == name)
+        contact_to_return = contact.numbers()
+      end
+    end
+    contact_to_return
+  end
+
   define_method(:add_new) do |attributes|
     if(attributes[:name] == nil)
       @numbers.push(attributes[:number])

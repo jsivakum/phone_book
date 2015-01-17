@@ -1,0 +1,4 @@
+<h2>Contact Details of <%= @name %></h2>
+<% @details_to_print.each() do |number| %>
+  <%= number.type() %>  <%= number.number() %>
+  <% end %>

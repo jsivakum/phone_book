@@ -41,6 +41,19 @@ describe('Contacts') do
     end
   end
 
+  describe('.search_for_contact') do
+    it("returns the numbers array of the contact being searched for") do
+      Contacts.clear()
+      contact = Contacts.new()
+      work_phone= Phone.new(:type => "work", :number => "306-450-2511")
+      contact.add_new(:name => "Jay", :number => work_phone)
+      cell_phone = Phone.new(:type => "cell", :number => "555-555-5555")
+      contact.add_new( :number => cell_phone)
+      numbers = Contacts.search_for_contact("Jay")
+      expect(numbers).to(eq([work_phone, cell_phone]))
+    end
+  end
+
 end
 
 describe('Phone') do
